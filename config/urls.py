@@ -15,6 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+
+from blog import apis
+#from blog.urls import router as blog_router
 #from . import views
 
 urlpatterns = [
@@ -22,4 +25,5 @@ urlpatterns = [
 #    path('', views.index, name='index'),
     path('accounts/', include('accounts.urls')),
     path('shop/', include('shop.urls')),
+    path('api/', include(apis.router.urls)),
 ]
